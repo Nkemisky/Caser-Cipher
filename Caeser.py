@@ -1,19 +1,29 @@
 import string
-import collections
-#This is a library used to get all the letters
 
 
-def encrypcaeser(plain_text, no_of_shift):
-    
-    upper = collections.deque(string.ascii_uppercase)
-    lower = collections.deque(string.ascii_lowercase)
-    
-    upper.rotate(no_of_shift)
-    lower.rotate(no_of_shift)
-    
-    upper = ''.join(list(upper))
-    lower = ''.join(list(lower))
-    
-    return plain_text.translate(str.maketrans(string.ascii_uppercase, upper)).translate(str.maketrans(string.ascii_lowercase, lower))
+plaintext = input('Enter your text: ')
+key = input(': ')
+
+
+def caeser(input_text,key):
+    ciphertext = ""
+   
+    input_text = plaintext.lower() 
+    for c in input_text:
+       
+       if c in string.ascii_letters:
+           temp = ord(c) + int(key)
+           
+           if temp > ord('z'):
+               temp = temp - 26
+               
+           ciphertext = ciphertext + chr(temp)
+       else:
+            ciphertext = ciphertext + c
+            
+    return ciphertext
+
+
+
 
 
