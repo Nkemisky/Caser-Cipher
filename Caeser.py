@@ -2,7 +2,7 @@ import string
 
 
 plaintext = input('Enter your text: ')
-key = input(': ')
+key = input('Enter your secret key: ')
 
 
 def caeser(input_text,key):
