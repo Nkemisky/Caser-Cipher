@@ -3,6 +3,10 @@ import string
 
 plaintext = input('Enter your text: ')
 key = input('Enter your secret key: ')
+is_encrypt = input('Are you encrypting or decrypting? Enter 1 for encrypting and 0 for decrypting: ')
+
+if is_encrypt == '0':
+    key = 26 - int(key)
 
 
 def caeser(input_text,key):
@@ -24,6 +28,6 @@ def caeser(input_text,key):
     return ciphertext
 
 
-
+print(caeser(plaintext, key))
 
 
